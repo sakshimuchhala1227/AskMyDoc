@@ -1,5 +1,5 @@
 .env
 check.py
 faiss_checker.py
-mycache/
+pycache/
 myenv/
