@@ -1,0 +1,12 @@
+unstructured  
+chromadb  
+sentence-transformers  
+transformers  
+accelerate  
+torch  
+sentencepiece  
+bitsandbytes  
+llama-cpp-python  
+fastapi  
+uvicorn  
+streamlit  
