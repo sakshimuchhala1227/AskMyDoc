@@ -28,38 +28,3 @@ def embed_and_store(chunks):
     db = FAISS.from_texts(chunks, embedding_model)
     db.save_local(DB_FAISS_PATH)
     print(f"Successfully stored {len(chunks)} chunks in FAISS.")
-
-# if __name__ == "__main__":
-#     file_path = r"F:\8th sem\cloud computing\cloudcomputing.docx"
-
-#     if os.path.exists(file_path):
-#         extracted_text = extract_text(file_path)
-        
-#         if extracted_text:
-#             print("\nText extracted successfully. Processing embeddings...\n")
-#             chunks = chunk_text(extracted_text)
-#             embed_and_store(chunks)
-#         else:
-#             print("Failed to extract text from the file.")
-#     else:
-#         print("File not found. Please check the path.")
-
-def process_uploaded_file(uploaded_file):
-    """Processes uploaded file, extracts text, chunks it, and stores embeddings."""
-    if uploaded_file is not None:
-        # Save the uploaded file temporarily
-        temp_path = f"temp_{uploaded_file.name}"
-        with open(temp_path, "wb") as f:
-            f.write(uploaded_file.getbuffer())
-
-        extracted_text = extract_text(temp_path)
-        os.remove(temp_path)  # Clean up temporary file
-
-        if extracted_text:
-            chunks = chunk_text(extracted_text)
-            num_chunks = embed_and_store(chunks)
-            return f"Successfully stored {num_chunks} text chunks in FAISS."
-        else:
-            return "Failed to extract text from the file."
-
-    return "No file uploaded."
