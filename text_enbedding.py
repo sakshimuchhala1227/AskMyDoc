@@ -2,7 +2,7 @@ import os
 from transformers import AutoTokenizer
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
-from document_loader import extract_text  # Ensure this function correctly extracts text from various formats
+from document_loader import extract_text
 
 # Set FAISS database path
 DB_FAISS_PATH = "faiss_vectorstore"
