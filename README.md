@@ -32,7 +32,7 @@ git clone https://github.com/yourusername/askmydoc.git
 cd askmydoc
 ```
 
-### 2. Create a Virtual Environment (Optional but Recommended)
+### 2. Create a Virtual Environment
 
 ```bash
 python -m venv myenv
